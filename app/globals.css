@@ -2,26 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@layer utilities {
+	.nav {
+		@apply flex justify-between items-center px-6 md:px-20 py-4;
+	}
+	.img {
+		@apply absolute left-[166px] top-[27px];
+		transform: matrix(-1, 0, 0, 1, 0, 0);
+	}
+	.youtube {
+		@apply absolute inset-x-[8.33%] inset-y-[20.83%];
+		background: rgba(180, 180, 180, 0.8);
+	}
+	.eye {
+		@apply inset-x-[4.17%] inset-y-[18.75%];
+		background: rgba(255, 255, 255, 0.8);
+	}
+	.thr {
+		@apply absolute w-[1079px] h-[82px] left-[calc(50%_-_1079px/2)] top-[588px];
+		background: rgba(30, 30, 30, 0.5);
+	}
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+/* .header {
+		@apply flex flex-row justify-between items-center gap-[253px] absolute w-[1367px] h-[76px] left-[calc(50%_-_1367px/2)] px-36 py-4 top-0;
+	}
+	.nav {
+		@apply w-[196px] h-[35px] flex-none order-none grow-0 mx-auto my-0;
+		/* Inside auto layout */
+/* }
+	.img {
+		@apply absolute left-[166px] top-[27px];
+		transform: matrix(-1, 0, 0, 1, 0, 0);
+	}
+	.title {
+		@apply absolute w-[116px] h-[35px] not-italic font-semibold text-[28px] leading-[35px] left-[180px] top-[20.5px];
+		font-family: "Sora";
+	} */
